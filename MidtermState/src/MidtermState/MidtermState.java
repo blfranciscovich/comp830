@@ -37,6 +37,7 @@ public class MidtermState {
 					      
 					      rs = true;
 					      us = false;
+					      break;
 					} else if (rs == true && health == 0) {
 						ReadyState readyState = new ReadyState();
 					      readyState.doAction(context);
@@ -44,6 +45,7 @@ public class MidtermState {
 					      System.out.println(context.getState().toString());
 					      
 					      health = health + 1;
+					      break;
 					} else if (rs == true && health == 1) {
 						DownState downState = new DownState();
 			    	      downState.doAction(context);
@@ -52,6 +54,7 @@ public class MidtermState {
 			    	      health = health + 1;
 			    	      rs = false;
 			    	      ds = true;
+			    	      break;
 					} else if (health > 1) {
 						UnknownState unknownState2 = new UnknownState();
 					      unknownState.doAction(context);
@@ -61,6 +64,7 @@ public class MidtermState {
 					      rs = false;
 					      ds = false;
 					      dns = false;
+					      break;
 					} else {
 						System.out.println("Command not avaiable in this state");
 						System.out.println(context.getState().toString());
@@ -74,6 +78,7 @@ public class MidtermState {
 				      System.out.println(context.getState().toString());
 				      ds = false;
 				      us = true;
+				      break;
 				}else {
 					System.out.println("Command not avaiable in this state");
 					System.out.println(context.getState().toString());
@@ -87,6 +92,7 @@ public class MidtermState {
 				      System.out.println(context.getState().toString());
 				      ds = false;
 				      rs = true;
+				      break;
 				} else {
 					System.out.println("Command not avaiable in this state");
 					System.out.println(context.getState().toString());
